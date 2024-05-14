@@ -6,6 +6,7 @@ import Link from "next/link";
 import { FaFacebookF, FaLinkedinIn, FaGoogle, FaRegEnvelope } from "react-icons/fa";
 import { MdLockOutline } from "react-icons/md";
 import axios from "axios";
+import * as dotenv from 'dotenv';
 // import { Frame } from "../../../public/Frame.png";
 
 interface FormData {
@@ -39,7 +40,7 @@ const Login: React.FC = () => {
                   let config = {
                     method: 'post',
                     maxBodyLength: Infinity,
-                    url: 'http://localhost:3005/auth/login',
+                    url: `${process.env.BASE_URL}/auth/login`,
                     headers: { 
                       'accept': '*/*', 
                       'Content-Type': 'application/json'
