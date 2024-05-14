@@ -29,14 +29,29 @@ const Login: React.FC = () => {
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (validateForm()) {
+            console.log('formData', formData);
             try {
-                const response = await axios.post("https://devapi.credebl.id/auth/signin", {
-                    email: formData.email || "gaurigaganbide123@gmail.com",
-                    isPasskey: false,
+                let data = JSON.stringify({
+                    email: formData.email,
                     password: formData.password
-                });
-                console.log("Login success:", formData);
-                router.push('/Dashboard');
+                  });
+
+                  let config = {
+                    method: 'post',
+                    maxBodyLength: Infinity,
+                    url: 'http://localhost:3005/auth/login',
+                    headers: { 
+                      'accept': '*/*', 
+                      'Content-Type': 'application/json'
+                    },
+                    data : data
+                  };
+                const response = await axios.request(config);
+                console.log("Login success:", response);
+                if(response.status === 201) {
+                    router.push('/Dashboard');
+                }
+                
             } catch (error) {
                 console.error("Login failed:", error);
                 // Handle login error
