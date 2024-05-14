@@ -6,6 +6,7 @@ import Link from "next/link";
 import { FaFacebookF, FaLinkedinIn, FaGoogle, FaRegEnvelope } from "react-icons/fa";
 import { MdLockOutline } from "react-icons/md";
 import axios from "axios";
+import * as dotenv from 'dotenv';
 // import { Frame } from "../../../public/Frame.png";
 
 interface FormData {
@@ -29,14 +30,29 @@ const Login: React.FC = () => {
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (validateForm()) {
+            console.log('formData', formData);
             try {
-                const response = await axios.post("https://devapi.credebl.id/auth/signin", {
-                    email: formData.email || "gaurigaganbide123@gmail.com",
-                    isPasskey: false,
+                let data = JSON.stringify({
+                    email: formData.email,
                     password: formData.password
-                });
-                console.log("Login success:", formData);
-                router.push('/Dashboard');
+                  });
+
+                  let config = {
+                    method: 'post',
+                    maxBodyLength: Infinity,
+                    url: `${process.env.BASE_URL}/auth/login`,
+                    headers: { 
+                      'accept': '*/*', 
+                      'Content-Type': 'application/json'
+                    },
+                    data : data
+                  };
+                const response = await axios.request(config);
+                console.log("Login success:", response);
+                if(response.status === 201) {
+                    router.push('/Dashboard');
+                }
+                
             } catch (error) {
                 console.error("Login failed:", error);
                 // Handle login error
