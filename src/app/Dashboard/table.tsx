@@ -63,11 +63,10 @@ const data = [
         status: 'Seeding Done',
         Logistics: 'Lorem ipsum',
         LoremIpsum: 'Lorem ipsum',
-        subtitle:'Lorem ipsum dolor sit amet',
+        subtitle:'Grains of Tradition, Bowls of Perfection',
         lastSeenDateTime: '2023-01-23T13:23Z',
         lastSeen: null,
-        imageUrl:
-            'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl:'rice.jpg',
     }
 ]
 
@@ -129,7 +128,7 @@ const Table = () => {
                                     Location
                                 </th>
                                 <th scope="col" className="px-6 py-3">
-                                    Ratings
+                                    Action
                                 </th>
                             </tr>
                         </thead>
@@ -220,7 +219,7 @@ const Table = () => {
                                     Logistics
                                 </th>
                                 <th scope="col" className="px-6 py-3">
-                                    Lorem ipsum
+                                    Action
                                 </th>
                             </tr>
                         </thead>

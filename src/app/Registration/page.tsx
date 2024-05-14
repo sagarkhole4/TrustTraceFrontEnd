@@ -304,7 +304,7 @@ const Registration: React.FC = () => {
                   <div>
                     <button
                       type="submit"
-                      className="border-2 border-black text-blue-500 rounded-full px-8 md:px-12 py-2 inline-block font-semibold hover:bg-black hover:text-white mt-9"
+                      className="border-2 border-black text-back rounded-full px-8 md:px-12 py-2 inline-block font-semibold hover:bg-black hover:text-white mt-9"
                     >
                       SignUp
                     </button>

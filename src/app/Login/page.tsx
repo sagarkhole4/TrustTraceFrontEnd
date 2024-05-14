@@ -92,7 +92,7 @@ const Login: React.FC = () => {
                         </div>
 
                         <div className="py-10">
-                            <h2 className="text-3xl font-bold text-black mb-2">
+                            <h2 className="text-3xl font-bold text-blue-600/100 mb-2">
                                 Sign in to Account
                             </h2>
                             <div className="border-2 w-10 border-black inline-block mb-2"></div>
@@ -146,7 +146,7 @@ const Login: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="w-full md:w-2/5 bg-black text-white rounded-tr-2xl rounded-br-2xl py-10 md:py-36 px-6 md:px-12">
+                    <div className="w-full md:w-2/5 bg-blue-800 text-white rounded-tr-2xl rounded-br-2xl py-10 md:py-36 px-6 md:px-12">
                         <h2 className="text-3xl font-bold mb-2">Hello, Friend</h2>
                         <div className="border-2 w-10 border-white inline-block mb-2"></div>
                         <p className="mb-6 md:mb-10">Track every step of your goods' journey with precision and ease, ensuring seamless traceability across the country.</p>
