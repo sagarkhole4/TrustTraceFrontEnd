@@ -1,81 +1,69 @@
 const people = [
     {
-        name: 'Leslie Alexander',
+        name: 'MEGI AGRO CHEM LTD. THANE',
         email: 'leslie.alexander@example.com',
-        role: 'Co-Founder / CEO',
+        role: 'Seed',
         imageUrl:
             'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        lastSeen: '3h ago',
+        lastSeen: 'THANE - 400605 ,INDIA',
         lastSeenDateTime: '2023-01-23T13:23Z',
     },
     {
-        name: 'Michael Foster',
+        name: 'CHHAJED GARDEN. PUNE',
         email: 'michael.foster@example.com',
-        role: 'Co-Founder / CTO',
+        role: 'Seed',
         imageUrl:
             'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        lastSeen: '3h ago',
+        lastSeen: 'PUNE - 412201 ,INDIA',
         lastSeenDateTime: '2023-01-23T13:23Z',
     },
     {
-        name: 'Dries Vincent',
+        name: 'CHEMPLUS OVERSEAS LLP. MUMBAI',
         email: 'dries.vincent@example.com',
-        role: 'Business Relations',
+        role: 'Fertilizer',
         product: 'hi',
         location: 'nashik',
         rating: '5',
         imageUrl:
             'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        lastSeen: null,
+        lastSeen: ' MUMBAI - 400067 ,INDIA',
     },
     {
-        name: 'Lindsay Walton',
+        name: 'DRIVE YOU NUTSS. NAVI MUMBAI',
         email: 'lindsay.walton@example.com',
-        role: 'Front-end Developer',
+        role: 'Transport',
         imageUrl:
             'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        lastSeen: '3h ago',
+        lastSeen: 'AURANGABAD - 431103 ,INDIA',
         lastSeenDateTime: '2023-01-23T13:23Z',
     },
     {
-        name: 'Courtney Henry',
+        name: 'PLANTATION SEEDS NETWORK',
         email: 'courtney.henry@example.com',
-        role: 'Designer',
+        role: 'Seed',
         imageUrl:
             'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        lastSeen: '3h ago',
+        lastSeen: 'NAVI MUMBAI - 400703 ,INDIA',
         lastSeenDateTime: '2023-01-23T13:23Z',
     },
     {
-        name: 'Tom Cook',
+        name: 'BAID AGRO PRODUCTS PVT',
         email: 'tom.cook@example.com',
-        role: 'Director of Product',
+        role: 'Fertilizer',
         imageUrl:
             'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        lastSeen: null,
+        lastSeen: 'JAIPUR - 302017 ,INDIA',
     },
 ]
 
 const data = [
     {
         id: 1,
-        product: 'Rice',
+        product: 'Daawat Pulav Basmati Rice',
         status: 'Seeding Done',
         Logistics: 'Lorem ipsum',
         LoremIpsum: 'Lorem ipsum',
         subtitle:'Lorem ipsum dolor sit amet',
-        lastSeenDateTime: '2023-01-23T13:23Z',
-        lastSeen: null,
-        imageUrl:
-            'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-    {
-        id: 2,
-        product: 'Sandalwood',
-        status: 'Extracted from A.P.',
-        Logistics: 'Lorem ipsum',
-        LoremIpsum: 'Lorem ipsum',
-        subtitle:'consectetur adipiscing elit',
         lastSeenDateTime: '2023-01-23T13:23Z',
         lastSeen: null,
         imageUrl:
@@ -158,7 +146,7 @@ const Table = () => {
                                     <td className="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">{person.role}</td>
                                     <td className="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
                                         {person.lastSeen ? (
-                                            <p className="text-gray-500">Last seen <time dateTime={person.lastSeenDateTime}>{person.lastSeen}</time></p>
+                                            <p className="text-gray-500"><time dateTime={person.lastSeenDateTime}>{person.lastSeen}</time></p>
                                         ) : (
                                             <div className="flex items-center gap-x-1.5">
                                                 <div className="flex-none rounded-full bg-emerald-500/20 p-1">
