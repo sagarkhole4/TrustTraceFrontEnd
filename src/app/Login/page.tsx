@@ -50,6 +50,7 @@ const Login: React.FC = () => {
                 const response = await axios.request(config);
                 console.log("Login success:", response);
                 if(response.status === 201) {
+                    localStorage.setItem('email', formData.email);
                     router.push('/Dashboard');
                 }
                 
