@@ -7,6 +7,7 @@ import { FaFacebookF, FaLinkedinIn, FaGoogle, FaRegEnvelope } from "react-icons/
 import { MdLockOutline } from "react-icons/md";
 import axios from "axios";
 import * as dotenv from 'dotenv';
+import { CommonConstants } from '@/common/constants';
 // import { Frame } from "../../../public/Frame.png";
 
 interface FormData {
@@ -40,13 +41,14 @@ const Login: React.FC = () => {
                   let config = {
                     method: 'post',
                     maxBodyLength: Infinity,
-                    url: `${process.env.BASE_URL}/auth/login`,
+                    url: `${CommonConstants.BASE_URL}/auth/login`,
                     headers: { 
                       'accept': '*/*', 
                       'Content-Type': 'application/json'
                     },
                     data : data
                   };
+                  console.log(config.url);
                 const response = await axios.request(config);
                 console.log("Login success:", response);
                 if(response.status === 201) {
