@@ -59,10 +59,10 @@ const Login: React.FC = () => {
                     console.log("userPayload::::", userPayload);
                     localStorage.setItem('userPaylod', JSON.stringify(userPayload));
                     router.push('/Dashboard');
+                    
                 }
                 
             } catch (error) {
-                console.error("Login failed:", error);
                 // Handle login error
             }
         } else {

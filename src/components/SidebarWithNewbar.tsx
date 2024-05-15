@@ -45,7 +45,7 @@ const SidebarWithNavbar: React.FC<IProps> = ({ children }) => {
   // const credIssued = true;
   const onClickApply = async () => {
     console.log("TestData:::::::::::::::::::");
-    const email= localStorage.getItem('email');
+    const email= JSON.parse(`${localStorage.getItem('userPaylod')}`).email;
 
     const axios = require('axios');
 const url= `${CommonConstants.BASE_URL}/issuance/${encodeURIComponent(`${email}`)}`;
