@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import DropDown from "./dropdown";
 import axios from "axios";
+import { CommonConstants } from "@/common/constants";
 
 interface FormData {
   firstName: string;
@@ -105,7 +106,7 @@ const Registration: React.FC = () => {
       let config = {
         method: "post",
         maxBodyLength: Infinity,
-        url: "https://1b18-103-97-166-226.ngrok-free.app/auth/register",
+        url: `${CommonConstants.BASE_URL}/auth/register`,
         headers: {
           "Content-Type": "application/json",
         },
@@ -304,7 +305,7 @@ const Registration: React.FC = () => {
                   <div>
                     <button
                       type="submit"
-                      className="border-2 border-black text-back rounded-full px-8 md:px-12 py-2 inline-block font-semibold hover:bg-black hover:text-white mt-9"
+                      className="border-2 border-black text-back rounded-full px-8 md:px-12 py-2 inline-block font-semibold mt-9"
                     >
                       SignUp
                     </button>

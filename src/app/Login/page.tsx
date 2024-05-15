@@ -52,7 +52,12 @@ const Login: React.FC = () => {
                 const response = await axios.request(config);
                 console.log("Login success:", response);
                 if(response.status === 201) {
-                    localStorage.setItem('email', formData.email);
+                    const userPayload = {
+                        email: formData.email,
+                        productId: response.data.data
+                    }
+                    console.log("userPayload::::", userPayload);
+                    localStorage.setItem('userPaylod', JSON.stringify(userPayload));
                     router.push('/Dashboard');
                 }
                 
