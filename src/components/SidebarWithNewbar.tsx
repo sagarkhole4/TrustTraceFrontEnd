@@ -1,8 +1,10 @@
 "use client"; // This is a client component 👈🏽
 
 import { Fragment, ReactNode } from "react";
+import React from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { CommonConstants } from "@/common/constants";
 
 const user = {
   name: "Tom Cook",
@@ -39,8 +41,30 @@ interface IProps {
 }
 
 const SidebarWithNavbar: React.FC<IProps> = ({ children }) => {
-  const onClickApply = () => {
+  const [credIssued, setCredIssued] = React.useState(true);
+  // const credIssued = true;
+  const onClickApply = async () => {
     console.log("TestData:::::::::::::::::::");
+    const email= localStorage.getItem('email');
+
+    const axios = require('axios');
+const url= `${CommonConstants.BASE_URL}/issuance/${encodeURIComponent(`${email}`)}`;
+console.log(url);
+const config = {
+  method: 'post',
+  maxBodyLength: Infinity,
+  url: url,
+  headers: { 
+    'accept': '*/*'
+  }
+};
+
+const response = await axios.request(config);
+  console.log(response);
+  if(response.status === 201){
+    setCredIssued(false);
+  }
+    console.log(email);
   };
   return (
     <>
@@ -64,13 +88,13 @@ const SidebarWithNavbar: React.FC<IProps> = ({ children }) => {
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
                       <div className="pr-10 pt-2">
-                         <button
+                          {credIssued && <button
                           onClick={onClickApply}
                           type="button"
                           className="ml-4 text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                         >
                           Apply your credential
-                        </button>
+                        </button>}
                       </div>
 
                       {false ?? <div
